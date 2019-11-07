@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script>
+        let ws = new WebSocket('wss://localhost:44320/ws');
+        ws.onopen = function () {
+            console.log('connect');
+        }
+
+        ws.onmessage = function (d) {
+            document.body.innerText = d.data;
+        }
+
+        ws.onclose = function () {
+            console.log('close');
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
